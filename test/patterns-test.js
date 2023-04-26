@@ -1,13 +1,5 @@
-const test = require("../lib/testing.js");
-const patterns = require("../src/patterns.js");
-
-const it = test.it;
-const displayHeadline = test.displayHeadline;
-
-const triangle = patterns.triangle;
-const rectangle = patterns.rectangle;
-const hollowRectangle = patterns.hollowRectangle;
-const alternateRectangle = patterns.alternateRectangle;
+const {it, conclusionMessage} = require("../lib/testing.js");
+const {rectangle, hollowRectangle, alternateRectangle, triangle} = require("../src/patterns.js");
 
 const testRectangle = function() {
   it("should give an rectangle of 3 x 4 dimension", {
@@ -20,7 +12,7 @@ const testRectangle = function() {
     expected: []
   });
 
-  displayHeadline("All test cases for rectangle passed successfully");
+  conclusionMessage("All test cases for rectangle passed successfully");
 };
 
 const testHollowRectangle = function() {
@@ -29,7 +21,7 @@ const testHollowRectangle = function() {
     expected: ["****", "*  *", "*  *", "****"]
   });
 
-  displayHeadline("All hollow rectangle case passed");
+  conclusionMessage("All hollow rectangle case passed");
 };
 
 const testAlternateRectangle = function() {
@@ -38,7 +30,7 @@ const testAlternateRectangle = function() {
     expected: ["****", "----", "****"]
   });
 
-  displayHeadline("All alternate rectangle cased passed");
+  conclusionMessage("All alternate rectangle cased passed");
 };
 
 const testTriangle = function() {
@@ -47,7 +39,7 @@ const testTriangle = function() {
     expected: ["*", "**", "***"]
   });
 
-  displayHeadline("All triangle cased passed");
+  conclusionMessage("All triangle cased passed");
 };
 
 const runTests = function() {
