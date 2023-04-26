@@ -12,7 +12,7 @@ const testRectangle = function() {
     expected: []
   });
 
-  conclusionMessage("All test cases for rectangle passed successfully");
+  conclusionMessage("rectangle test cases passed successfully");
 };
 
 const testHollowRectangle = function() {
@@ -21,7 +21,7 @@ const testHollowRectangle = function() {
     expected: ["****", "*  *", "*  *", "****"]
   });
 
-  conclusionMessage("All hollow rectangle case passed");
+  conclusionMessage("hollow rectangle test cases passed successfully");
 };
 
 const testAlternateRectangle = function() {
@@ -30,7 +30,7 @@ const testAlternateRectangle = function() {
     expected: ["****", "----", "****"]
   });
 
-  conclusionMessage("All alternate rectangle cased passed");
+  conclusionMessage("alternate rectangle test cases passed successfully");
 };
 
 const testTriangle = function() {
@@ -39,7 +39,7 @@ const testTriangle = function() {
     expected: ["*", "**", "***"]
   });
 
-  conclusionMessage("All triangle cased passed");
+  conclusionMessage("triangle test cases passed successfully");
 };
 
 const runTests = function() {
