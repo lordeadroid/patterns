@@ -1,4 +1,4 @@
-const {it, conclusionMessage} = require("../lib/testing.js");
+const {it, concludingMessage} = require("../lib/testing.js");
 const {rectangle, hollowRectangle, alternateRectangle, triangle} = require("../src/patterns.js");
 
 const testRectangle = function() {
@@ -12,7 +12,7 @@ const testRectangle = function() {
     expected: []
   });
 
-  conclusionMessage("rectangle test cases passed successfully");
+  concludingMessage("rectangle test cases passed successfully");
 };
 
 const testHollowRectangle = function() {
@@ -21,7 +21,7 @@ const testHollowRectangle = function() {
     expected: ["****", "*  *", "*  *", "****"]
   });
 
-  conclusionMessage("hollow rectangle test cases passed successfully");
+  concludingMessage("hollow rectangle test cases passed successfully");
 };
 
 const testAlternateRectangle = function() {
@@ -30,7 +30,7 @@ const testAlternateRectangle = function() {
     expected: ["****", "----", "****"]
   });
 
-  conclusionMessage("alternate rectangle test cases passed successfully");
+  concludingMessage("alternate rectangle test cases passed successfully");
 };
 
 const testTriangle = function() {
@@ -39,7 +39,7 @@ const testTriangle = function() {
     expected: ["*", "**", "***"]
   });
 
-  conclusionMessage("triangle test cases passed successfully");
+  concludingMessage("triangle test cases passed successfully");
 };
 
 const runTests = function() {
