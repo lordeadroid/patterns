@@ -1,1 +1,1 @@
-node test/patterns-test.js
+node --watch --test test
