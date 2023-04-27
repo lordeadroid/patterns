@@ -1,52 +1,36 @@
-const {it, concludingMessage} = require("../lib/testing.js");
+const {deepStrictEqual} = require("assert");
+const {describe, it} = require("node:test");
+
 const {rectangle, hollowRectangle, alternateRectangle, triangle} = require("../src/patterns.js");
 
-const testRectangle = function() {
-  it("should give an rectangle of 3 x 4 dimension", {
-    actual: rectangle(3, 4),
-    expected: ["****", "****", "****"]
+describe("rectangle", function() {
+  describe("filled rectangle", function() {
+    it("should give a rectangle of the given dimensions", function() {
+      deepStrictEqual(rectangle(3, 2), ["**", "**", "**"]);
+    });
+
+    it("should return nothing when dimension is 0", function() {
+      deepStrictEqual(rectangle(0, 0), []);
+    });
   });
 
-  it("should return nothing when dimension is 0", {
-    actual: rectangle(0, 0),
-    expected: []
+  describe("hollow rectangle", function() {
+    it("should give an hollow rectangle of the given dimensions", function() {
+      deepStrictEqual(hollowRectangle(4, 4), ["****", "*  *", "*  *", "****"]);
+    });
   });
 
-  concludingMessage("rectangle test cases passed successfully");
-};
-
-const testHollowRectangle = function() {
-  it("should give hollow rectangle of 4 x 4 dimension", {
-    actual: hollowRectangle(4, 4),
-    expected: ["****", "*  *", "*  *", "****"]
+  describe("alternate rectangle", function() {
+    it("should given a rectangle of different patterns", function() {
+      deepStrictEqual(alternateRectangle(3, 3), ["***", "---", "***"]);
+    });
   });
+});                                              
 
-  concludingMessage("hollow rectangle test cases passed successfully");
-};
-
-const testAlternateRectangle = function() {
-  it("should give alternate lines of the rectangle", {
-    actual: alternateRectangle(3, 4),
-    expected: ["****", "----", "****"]
+describe("triangle", function() {
+  describe("left alingned triangle", function() {
+    it("should give a left alingned right angled triangle", function() {
+      deepStrictEqual(triangle(4), ["*", "**", "***", "****"]);
+    });
   });
-
-  concludingMessage("alternate rectangle test cases passed successfully");
-};
-
-const testTriangle = function() {
-  it("should give left alingned triangle", {
-    actual: triangle(3),
-    expected: ["*", "**", "***"]
-  });
-
-  concludingMessage("triangle test cases passed successfully");
-};
-
-const runTests = function() {
-  testRectangle();
-  testHollowRectangle();
-  testAlternateRectangle();
-  testTriangle();
-};
-
-runTests();
+});
