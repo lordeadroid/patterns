@@ -1,18 +1,12 @@
-const repeat = function(symbol, times) {
-  return symbol.repeat(times);
-};
+const repeat = function(character) {
+  return function(times) {
+    return character.repeat(times);
+  }
+}
 
-const stars = function(times) {
-  return repeat("*", times); 
-};
-
-const spaces = function(times) {
-  return repeat(" ", times); 
-};
-
-const dashes = function(times) {
-  return repeat("-", times); 
-};
+const stars = repeat("*");
+const spaces = repeat(" ");
+const dashes = repeat("-");
 
 const lineWidth = function(height, width) {
   const lines = [];
